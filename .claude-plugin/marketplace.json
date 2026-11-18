@@ -1,0 +1,11 @@
+{
+  "name": "security-check",
+  "owner": { "name": "Alessandro Cataldo" },
+  "plugins": [
+    {
+      "name": "security-check",
+      "source": "./",
+      "description": "27 controlli di sicurezza pre-lancio per siti e web app."
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "security-check",
+  "version": "1.0.0",
+  "description": "27 controlli di sicurezza pre-lancio per siti e web app: trova, corregge, testa e fa il report.",
+  "author": { "name": "Alessandro Cataldo" },
+  "repository": "https://github.com/AlessandroCataldo/security-check",
+  "license": "MIT"
+}

@@ -6,15 +6,32 @@ Pensata per app fatte in vibe coding: login, API key, dati degli utenti, pagamen
 
 ## Installazione
 
-**Claude Code (tutti i progetti)**
+### Il modo più semplice: chiedilo a Claude
+Incolla questo link in Claude Code e scrivi "installa questa skill":
+`https://github.com/AlessandroCataldo/security-check`
+
+### Un comando (Claude Code, Mac/Linux)
 ```bash
-git clone https://github.com/AlessandroCataldo/security-check.git /tmp/security-check
-mkdir -p ~/.claude/skills && cp -r /tmp/security-check/skills/security-check ~/.claude/skills/
+curl -fsSL https://raw.githubusercontent.com/AlessandroCataldo/security-check/main/install.sh | bash
+```
+Solo per il progetto corrente: aggiungi `-s -- --project` dopo `bash`.
+
+### Come plugin di Claude Code
+```
+/plugin marketplace add AlessandroCataldo/security-check
+/plugin install security-check@security-check
 ```
 
-**Claude Code (solo un progetto)**: copia `skills/security-check` in `.claude/skills/` dentro il progetto.
+### Claude.ai / Claude Desktop
+Scarica [security-check.zip](https://github.com/AlessandroCataldo/security-check/raw/main/security-check.zip) e caricalo da Impostazioni > Capabilities > Skills.
 
-**Claude.ai / Claude Desktop**: scarica lo zip della repo, comprimi la cartella `skills/security-check` in `security-check.zip` e caricala da Impostazioni > Capabilities > Skills.
+### Istruzioni per Claude (se un utente ti chiede di installare questa skill)
+1. Se puoi eseguire comandi, lancia:
+   `curl -fsSL https://raw.githubusercontent.com/AlessandroCataldo/security-check/main/install.sh | bash`
+   (con `-s -- --project` se l'utente la vuole solo nel progetto corrente).
+2. Se curl non è disponibile: clona la repo e copia la cartella `skills/security-check` in `~/.claude/skills/`.
+3. Se sei su Claude.ai senza terminale: dai all'utente il link allo zip qui sopra e digli di caricarlo da Impostazioni > Capabilities > Skills.
+4. Conferma all'utente dove l'hai installata e che dopo il riavvio si usa scrivendo "fai il security check".
 
 ## Uso
 
