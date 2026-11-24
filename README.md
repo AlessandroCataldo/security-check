@@ -35,6 +35,10 @@ Scarica [security-check.zip](https://github.com/AlessandroCataldo/security-check
 
 ## Uso
 
+**Dal browser, senza installare niente sul PC**: carica la skill su claude.ai (vedi sopra), apri una chat e scrivi "fai il security check". Poi allega lo zip del tuo progetto, oppure incolla il link della repo GitHub o l'URL del sito. Claude analizza, corregge una copia e ti restituisce il progetto corretto e il report da scaricare. In alternativa usa [claude.ai/code](https://claude.ai/code) con la repo collegata: lì le correzioni vanno direttamente sul codice.
+
+**Da Claude Code**:
+
 Apri il progetto e scrivi: `fai il security check` oppure `/security-check`.
 
 Claude mappa il progetto, lancia gli script, passa i 27 controlli, corregge, testa e scrive `SECURITY-REPORT.md` nella root.

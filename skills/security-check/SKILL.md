@@ -7,6 +7,19 @@ description: Audit di sicurezza pre-lancio per siti e web app (anche fatte in vi
 
 Obiettivo: nessuno deve poter entrare nell'app, leggere dati altrui o trovare segreti. Si lavora sul codice del progetto corrente, si corregge e si consegna un report.
 
+## Dove gira
+
+La skill funziona sia con Claude Code (terminale, desktop, claude.ai/code) sia nella chat di claude.ai dal browser. Prima di iniziare capisci in che situazione sei:
+
+- **Hai il codice del progetto in una cartella** (Claude Code, oppure claude.ai/code con la repo collegata): segui la procedura completa qui sotto e correggi direttamente i file.
+- **Sei nella chat di claude.ai e il codice non c'è**: chiedi all'utente una di queste cose, in quest'ordine di preferenza:
+  1. lo zip del progetto caricato in chat (senza `node_modules`; se vuole includere `.env`, avvisalo che non serve e che è meglio toglierlo);
+  2. il link a una repo GitHub pubblica (prova `git clone`; se la rete del sandbox lo blocca, chiedi lo zip: GitHub ha "Code > Download ZIP");
+  3. solo l'URL del sito online: in questo caso fai solo i controlli dall'esterno (20, 21, 22, 23, 12 e la parte "da fuori" del 27) e scrivi chiaramente nel report che gli altri controlli non sono stati fatti.
+  Se il sandbox non ha accesso a internet, `check_live.sh` non funziona: dai all'utente il comando da lanciare lui oppure segnala i controlli come NON VERIFICATO.
+  Se l'esecuzione di codice è disattivata, fai l'analisi leggendo i file e di' all'utente di attivare "Code execution" nelle impostazioni per avere anche gli script.
+- **Nella chat non puoi modificare il progetto dell'utente.** Applica le correzioni a una copia, poi consegna come file scaricabili: lo zip del progetto corretto (oppure i soli file modificati) e `SECURITY-REPORT.md`. Nel report elenca ogni file cambiato, così l'utente sa cosa sostituire.
+
 ## Come procedere
 
 1. **Mappa il progetto.** Individua stack (Next.js, Vite/React, Express, Django, Laravel, Supabase, Firebase...), dove gira il backend, dove sta il database, come si fa il login, quali endpoint esistono, dove si caricano file, dove si paga. Leggi `package.json` / `requirements.txt` / `composer.json`, la config del deploy e i file `.env*` (senza mai stampare i valori dei segreti nel report).
